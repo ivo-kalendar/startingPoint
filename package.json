@@ -1,0 +1,17 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "clean": "rm -r dist && mkdir dist",
+    "build": "npm run clean && touch dist/test1.js dist/test2.html dist/test3.ejs"
+  },
+  "author": "Ivo Kalendarov <ivokalendar@icloud.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
