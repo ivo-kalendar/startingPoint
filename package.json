@@ -5,13 +5,23 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "clean": "rm -r dist && mkdir dist",
-    "build": "npm run clean && touch dist/test1.js dist/test2.html dist/test3.ejs"
+    "build": "webpack --config=src/config/webpack.config.js",
+    "clean": "rm -r dist && npm run build"
   },
   "author": "Ivo Kalendarov <ivokalendar@icloud.com>",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "loader": "^2.1.1",
+    "nodemon": "^2.0.2",
+    "style": "0.0.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "style-loader": "^1.1.3"
   }
 }
