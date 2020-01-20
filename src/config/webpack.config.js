@@ -12,15 +12,25 @@ module.exports = {
 	
 	},
 	devServer: {
-		contentBase: 'src/views'
-		// port: 3000,
-		// compress: true
+		contentBase: 'src/views',
+		host: '192.168.0.109',
+		port: 3000,
+		compress: true,
+		overlay: true
 	},
 	module: {
 		rules: [
 			{
 				test: /\.css$/,
 				use: [ 'style-loader', 'css-loader' ]
+			},
+			{
+				test: /\.html$/,
+				use: [
+						{loader: 'file-loader', options: {name: '[name].html'}},
+						{loader: 'extract-loader'},
+						{loader: 'html-loader'}
+					]
 			}
 		]
 	}
