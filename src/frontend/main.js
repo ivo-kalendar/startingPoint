@@ -15,3 +15,7 @@ const { obj } = require('./debug/object')
 console.log('Hello from frontend/main.js')
 consoleLogs()
 obj.func()
+
+let arrFunct = () => {
+	console.log(`Hello from the future.`)
+}
