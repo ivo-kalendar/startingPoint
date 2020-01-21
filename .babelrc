@@ -2,5 +2,5 @@
   "presets": [
   	[
       "@babel/preset-env",
-      {"debug": true, "corejs": 3, "useBuiltIns": "entry", "targets": ["last 5 versions"]}]]
+      {"debug": true, "corejs": 3, "useBuiltIns": "entry", "targets": ["last 2 versions"]}]]
 }

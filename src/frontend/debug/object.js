@@ -8,4 +8,6 @@ const obj = {
 	func4: () => console.log('ARROW FUNCTION: ' + this.obj.first + '. arrow: ' + this.obj.second)
 }
 
+// alert('ivo')
+
 module.exports.obj = obj
