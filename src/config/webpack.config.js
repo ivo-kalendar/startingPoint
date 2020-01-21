@@ -12,7 +12,8 @@ module.exports = {
 	
 	},
 	devServer: {
-		contentBase: 'src/views',
+		// contentBase: 'src/views',
+		contentBase: 'dist',
 		host: '192.168.0.109',
 		port: 3000,
 		compress: true,
