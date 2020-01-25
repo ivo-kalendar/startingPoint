@@ -12,11 +12,10 @@ const webpackHotMiddleware = require('webpack-hot-middleware')(compiler)
 
 app.set('views', './src/views')
 app.set('view engine', 'ejs')
-app.use('/', require('./router'))
 
+app.use('/', require('./router'))
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
-
 app.use(webpackDevMiddleware)
 app.use(webpackHotMiddleware)
 app.use(express.static('./dist'))

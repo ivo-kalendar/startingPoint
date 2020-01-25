@@ -4,8 +4,8 @@ const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  	mode: "development",
-  	// mode: "production",
+  	// mode: "development",
+  	mode: "production",
 	entry: './src/frontend/main.js',
 	output: {
 		filename: '[name]-bundle.js',
@@ -14,8 +14,7 @@ module.exports = {
 	
 	},
 	devServer: {
-		// contentBase: 'src/views',
-		contentBase: './dist',
+		contentBase: './src/views',
 		// host: '192.168.0.109',
 		// port: 3000,
 		// compress: true,
@@ -40,11 +39,21 @@ module.exports = {
 						// {loader: 'extract-loader'},
 						{loader: 'html-loader'}
 					]
+			},
+			{
+				test: /\.ejs$/,
+				loader: 'ejs-loader',
+				exclude: /node-modules/,
+				query: {
+					interpolate : /\{\{(.+?)\}\}/g,
+					evaluate    : /\[\[(.+?)\]\]/g
+				}
 			}
 		]
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin(),
 		new HTMLWebpackPlugin({
 			template: "./src/views/test.html"
 		})

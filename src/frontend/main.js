@@ -1,13 +1,14 @@
 
-// import 'core-js/stable'
-require('regenerator-runtime/runtime')
-require('webpack-hot-middleware/client?reload=true')
-require('core-js/es/array')
+// import 'core-js/es'
+// import 'regenerator-runtime/runtime'
+import 'webpack-hot-middleware/client?reload=true'
 
 //--VIEWS--// use only for development env //
-// require('../views/index.ejs')
-// require('../views/about.ejs')
 require('../views/test.html')
+require('../views/index.ejs')
+require('../views/about.ejs')
+require('../views/another.ejs')
+require('../views/includeFile.ejs')
 
 //--STYLES--//
 require('../styles/main.css')
@@ -15,25 +16,30 @@ require('../styles/another.css')
 
 
 // //--SCRIPTS--//
-import { consoleLogs, sec } from './debug/debug'
-const { obj } = require('./debug/object')
+// require('./debug/debug')
+// const {object} = require('./debug/object')
+import obj from './debug/object'
+// import sec from './debug/debug'
+import consoleLogs from './debug/debug'
+// const { consoleLogs, sec } = require('./debug/debug')
+// const { obj } = require('./debug/object')
 
 //--TEST-CODE--//
-console.log('Hello from frontend/main.js!!!')
-consoleLogs()
-sec()
-// alert('hello')
-console.log(obj)
+consoleLogs.func1()
+consoleLogs.func3()
+consoleLogs.func5()
+// sec()
 obj.func1()
-obj.func2()
+// obj.func2()
 obj.func3()
-obj.func4()
+// obj.func4()
+obj.func5()
 
-let arrFunct = async args => {
-	const { aqwqw, bqwqw} = args
-	await console.log(`Hello from the future. ${aqwqw} , ${bqwqw}`)
-	console.log('Done!!!')
-}
+// let arrFunct = async args => {
+// 	const { aqwqw, bqwqw} = args
+// 	await console.log(`Hello from the future... ${aqwqw} , ${bqwqw}`)
+// 	console.log('Done!!!')
+// }
 
 
-arrFunct({ aqwqw: 5, bqwqw: 2 })
+// arrFunct({ aqwqw: 5, bqwqw: 2 })
