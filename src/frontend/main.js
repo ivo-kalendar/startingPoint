@@ -12,7 +12,6 @@ require('../views/includeFile.ejs')
 
 //--STYLES--//
 require('../styles/main.css')
-require('../styles/another.css')
 
 
 // //--SCRIPTS--//

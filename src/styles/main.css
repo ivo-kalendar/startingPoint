@@ -13,3 +13,8 @@ h1 {
 	font-size: 5em;
 	text-shadow: 0 0 8px rgba(0, 0, 0, .3);
 }
+
+@import './another';
+@import './sass/main';
+@import './sass/style';
+@import './sass/test';

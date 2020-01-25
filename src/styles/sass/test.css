@@ -1,0 +1,14 @@
+.test {
+	border: 1px solid red;
+
+	&--inside {
+		margin: 2em;
+
+		&--up {
+			padding: 1em;
+		}
+		&--down {
+			padding: .2em;
+		}
+	}
+}
