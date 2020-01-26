@@ -9,9 +9,12 @@ body {
 }
 
 h1 {
-	color: #fff;
 	font-size: 5em;
 	text-shadow: 0 0 8px rgba(0, 0, 0, .3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
 }
 
 @import './another';

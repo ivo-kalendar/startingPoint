@@ -6,7 +6,7 @@ const webpack = require('webpack')
 const config = require('../config/webpack.config.js')
 const compiler = webpack(config)
 
-const webpackDevMiddleware = require('webpack-dev-middleware')(compiler, config.devServer)
+const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')(compiler)
 
 
@@ -16,11 +16,12 @@ app.set('view engine', 'ejs')
 app.use('/', require('./router'))
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
-app.use(webpackDevMiddleware)
+app.use(webpackDevMiddleware(compiler, config.devServer))
 app.use(webpackHotMiddleware)
 app.use(express.static('./dist'))
 
 
-app.listen(3000, () => {console.log(`Server started on port 3000...`)})
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => console.log(`Server started on port ${PORT}...`))
 
 

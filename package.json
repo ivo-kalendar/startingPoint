@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon --watch src/config --watch src/backend app.js",
-    "build": "webpack --config=src/config/webpack.config.js",
+    "build": "webpack --config=src/config/webpack.prod.js",
     "clean": "rm -r dist && npm run build",
     "dev": "webpack-dev-server --config=src/config/webpack.config.js",
     "serv": "node app.js"
@@ -13,16 +13,22 @@
   "author": "Ivo Kalendarov <ivokalendar@icloud.com>",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^9.7.4",
     "babel-plugin-transform-runtime": "^6.23.0",
     "core-js": "^3.6.4",
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "ejs-loader": "^0.3.5",
     "express": "^4.17.1",
     "extract-loader": "^3.1.0",
     "file-loader": "^5.0.2",
     "html-loader": "^0.5.5",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss": "^7.0.26",
+    "postcss-loader": "^3.0.0",
     "regenerator-runtime": "^0.13.3",
     "sass-loader": "^8.0.2",
     "webpack-dev-server": "^3.10.1"

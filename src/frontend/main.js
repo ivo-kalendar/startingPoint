@@ -1,9 +1,7 @@
 
-// import 'core-js/es'
-// import 'regenerator-runtime/runtime'
-import 'webpack-hot-middleware/client?reload=true'
+// import 'webpack-hot-middleware/client?reload=true'
 
-//--VIEWS--// use only for development env //
+//--VIEWS--// use for hot-reload only for development env //
 require('../views/test.html')
 require('../views/index.ejs')
 require('../views/about.ejs')

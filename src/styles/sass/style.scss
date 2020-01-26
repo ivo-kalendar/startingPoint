@@ -1,8 +1,11 @@
+
+@import './sass/variables';
+
 .test {
 	text-align: left;
 
 	&--inside {
-		box-shadow: -2px 2px 10px blue;
+		box-shadow: $bSh;
 
 		&--up {
 			background-color: #fff;
@@ -12,3 +15,4 @@
 		}
 	}
 }
+

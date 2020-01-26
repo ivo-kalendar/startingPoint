@@ -2,11 +2,14 @@
 const path = require('path')
 const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
-  	// mode: "development",
-  	mode: "production",
-	entry: './src/frontend/main.js',
+  	mode: "development",
+  	// mode: "production",
+	entry: {
+		main: ['webpack-hot-middleware/client?reload=true', './src/frontend/main.js']
+	},
 	output: {
 		filename: '[name]-bundle.js',
 		path: path.resolve(__dirname, '../../dist'),
@@ -34,7 +37,7 @@ module.exports = {
 			// },
 			{
 				test: /\.(sass|scss|css)$/,
-				use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+				use: [ 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ]
 			},
 			{
 				test: /\.html$/,
@@ -47,11 +50,11 @@ module.exports = {
 			{
 				test: /\.ejs$/,
 				loader: 'ejs-loader',
-				exclude: /node-modules/,
-				query: {
-					interpolate : /\{\{(.+?)\}\}/g,
-					evaluate    : /\[\[(.+?)\]\]/g
-				}
+				exclude: /node-modules/
+				// query: {
+				// 	interpolate : /\{\{(.+?)\}\}/g,
+				// 	evaluate    : /\[\[(.+?)\]\]/g
+				// }
 			}
 		]
 	},
