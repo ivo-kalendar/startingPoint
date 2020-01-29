@@ -11,6 +11,8 @@ require('../views/includeFile.ejs')
 //--STYLES--//
 require('../styles/main.css')
 
+console.log(`You are in ${process.env.NODE_ENV} environment.`)
+
 
 // //--SCRIPTS--//
 // require('./debug/debug')

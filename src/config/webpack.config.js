@@ -6,7 +6,6 @@ const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
   	mode: "development",
-  	// mode: "production",
 	entry: {
 		main: ['webpack-hot-middleware/client?reload=true', './src/frontend/main.js']
 	},
@@ -14,13 +13,9 @@ module.exports = {
 		filename: '[name]-bundle.js',
 		path: path.resolve(__dirname, '../../dist'),
 		publicPath: "/"
-	
 	},
 	devServer: {
 		contentBase: './src/views',
-		// host: '192.168.0.109',
-		// port: 3000,
-		// compress: true,
 		overlay: true,
 		hot: true
 	},
@@ -31,30 +26,18 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: "babel-loader" 
 			},
-			// {
-			// 	test: /\.css$/,
-			// 	use: [ 'style-loader', 'css-loader' ]
-			// },
 			{
 				test: /\.(sass|scss|css)$/,
 				use: [ 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ]
 			},
 			{
 				test: /\.html$/,
-				use: [
-						// {loader: 'file-loader', options: {name: '[name].html'}},
-						// {loader: 'extract-loader'},
-						{loader: 'html-loader'}
-					]
+				use: [{loader: 'html-loader'}]
 			},
 			{
 				test: /\.ejs$/,
 				loader: 'ejs-loader',
 				exclude: /node-modules/
-				// query: {
-				// 	interpolate : /\{\{(.+?)\}\}/g,
-				// 	evaluate    : /\[\[(.+?)\]\]/g
-				// }
 			}
 		]
 	},

@@ -6,7 +6,7 @@
 if (document.querySelector('p')) {
 	const p = document.querySelector('p').style
 	p.margin = '5em'
-	p.color = 'rgb(50, 255, 255)'
+	p.color = 'rgb(250, 0, 255)'
 }
 
 console.log('hello from debug')

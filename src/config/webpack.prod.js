@@ -4,7 +4,6 @@ const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   	mode: "production",
@@ -18,8 +17,8 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: "babel-loader" 
+				loader: "babel-loader",
+				exclude: /node_modules/
 			},
 			{
 				test: /\.(sass|scss|css)$/,
@@ -39,6 +38,7 @@ module.exports = {
 	plugins: [ 
 		new OptimizeCssAssetsPlugin(),
 		new MiniCSSExtractPlugin({filename: "[name]-bundle.css"}), 
-		new webpack.NamedModulesPlugin() 
+		new webpack.DefinePlugin({"process.env": {NODE_ENV: JSON.stringify("production")}}),
+		new webpack.NamedModulesPlugin()
 	]
 }
