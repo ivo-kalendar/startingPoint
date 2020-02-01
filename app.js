@@ -1,3 +1,3 @@
 
-require('./src/backend/server')
+require('./src/backend/server.dev')
 require('@babel/register')
